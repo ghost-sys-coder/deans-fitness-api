@@ -17,6 +17,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@clerk/backend": "^3.2.4",
     "@neondatabase/serverless": "^0.10.4",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",

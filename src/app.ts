@@ -6,6 +6,7 @@ import cors from "cors";
 
 // routes
 import webhookRoutes from "./routes/webhook.routes.js";
+import onboardingRoutes from "./routes/onboarding.routes.js";
 
 const app = express();
 
@@ -14,20 +15,20 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
-// webhook route registers the JSON parser
+// Webhook route must be mounted before express.json() — needs raw body for svix verification
 app.use("/webhooks/clerk", webhookRoutes);
 
-
-// middleware
+// Global middleware
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
 
-// health check
+// Health check
 app.get("/health", (_req, res) => {
   res.json({ status: "app is running" });
 });
 
-// routes
+// Routes
+app.use("/api/onboarding", onboardingRoutes);
 
 export default app;
