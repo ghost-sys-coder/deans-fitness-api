@@ -7,3 +7,6 @@ dist/
 .claude/
 .env.example
 
+
+.vercel
+.env*.local
