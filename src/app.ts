@@ -14,6 +14,10 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
+// webhook route registers the JSON parser
+app.use("/webhooks/clerk", webhookRoutes);
+
+
 // middleware
 app.use(express.json());
 app.use(cookieParser());
@@ -25,6 +29,5 @@ app.get("/health", (_req, res) => {
 });
 
 // routes
-app.use("/webhooks/clerk", webhookRoutes);
 
 export default app;
