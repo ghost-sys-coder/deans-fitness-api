@@ -1,0 +1,41 @@
+{
+  "name": "deans-fitness-api",
+  "version": "1.0.0",
+  "description": "Dean's Fitness App — Node.js API",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.4",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "drizzle-orm": "^0.41.0",
+    "express": "^4.21.2",
+    "morgan": "^1.10.1",
+    "pg": "^8.20.0",
+    "svix": "^1.90.0"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.1",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^22.14.0",
+    "@types/pg": "^8.20.0",
+    "drizzle-kit": "^0.30.4",
+    "tsx": "^4.21.0",
+    "typescript": "^5.8.3"
+  }
+}
